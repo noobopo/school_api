@@ -138,7 +138,7 @@ export const updateCourse = async (req, res) => {
 export const latestCourse = async (req, res) => {
     try {
         const userId = req.user
-        const courses = await Course.find({ userId }).sort({ $natural: -1 }).limit(5)
+        const courses = await Course.find({ userId }).sort({ $natural: -1 }).limit(3)
         return res.status(200).json({
             success: true,
             courses
